@@ -19,7 +19,6 @@ public class AdvertisementController {
     public String findAllAdvertisements(Model model) {
         model.addAttribute("ads", service.getAllAdvertisements());
         return "ads";
-
     }
 
     @GetMapping("/ads/create")

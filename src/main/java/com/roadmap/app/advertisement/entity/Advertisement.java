@@ -40,12 +40,4 @@ public class Advertisement {
     private LocalDate startDateOfAd;
     @Column(name = "End_date")
     private LocalDate endDateOfAd;
-
-    public Advertisement(String title, String description) {
-        this.title = title;
-        this.description = description;
-    }
-
-    public Advertisement() {
-    }
 }
