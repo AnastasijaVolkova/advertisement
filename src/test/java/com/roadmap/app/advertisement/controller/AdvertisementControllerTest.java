@@ -56,18 +56,32 @@ public class AdvertisementControllerTest {
 
     @Test
     public void getAdvertisement() {
-
+        String result = controller.getAdvertisement(123, model);
+        Assert.assertNotNull(result);
+        Assert.assertEquals("single-ad", result);
+        Mockito.verify(model, Mockito.times(1))
+                .addAttribute(any(), any());
     }
 
     @Test
     public void updateAdvertisement() {
+        RedirectView redirectView = controller.updateAdvertisement(123, new AdvertisementDto());
+        Assert.assertNotNull(redirectView);
+        Assert.assertEquals("/ads/123", redirectView.getUrl());
     }
 
     @Test
     public void update() {
+        String result = controller.update(555, model);
+        Assert.assertNotNull(result);
+        Assert.assertEquals("update-ad", result);
+        Mockito.verify(model, Mockito.times(1)).addAttribute(any(), any());
     }
 
     @Test
     public void deleteAdvertisement() {
+        RedirectView redirectView = controller.deleteAdvertisement(555);
+        Assert.assertNotNull(redirectView);
+        Assert.assertEquals("/", redirectView.getUrl());
     }
 }
