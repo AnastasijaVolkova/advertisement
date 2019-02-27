@@ -1,0 +1,11 @@
+<head th:replace="header::head"></head>
+<header th:replace="header::header"></header>
+<body class="d-flex flex-column h-100">
+<div class="container">
+<h1 class="mt-5">Add new ad</h1>
+    <form th:action="@{/newAd}" th:object="${advertisementDto}" method="post" xmlns:th="http://www.w3.org/1999/xhtml">
+        <div th:replace="ad-form::ad-form"></div>
+    </form>
+</div>
+</body>
+<footer th:replace="header::footer"></footer>

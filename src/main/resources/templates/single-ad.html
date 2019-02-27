@@ -1,0 +1,36 @@
+<head th:replace="header::head"></head>
+<header th:replace="header::header"></header>
+
+<body class="d-flex flex-column h-100">
+<div class="container">
+
+    <h1 class="mt-5" th:text="${ad.title}"></h1>
+    <h3 class="mt-1">Description</h3>
+    <p class="mt-1" th:text="${ad.description}"></p>
+    <dl class="row">
+        <dt class="col-sm-3">Price:</dt>
+        <dd class="col-sm-7" th:text="${ad.price}"></dd>
+        <dt class="col-sm-3">Phone number #1:</dt>
+        <dd class="col-sm-7" th:text="${ad.contactPhoneNumber1}"></dd>
+        <dt class="col-sm-3">Phone number #2:</dt>
+        <dd class="col-sm-7" th:text="${ad.contactPhoneNumber2}"></dd>
+        <dt class="col-sm-3">Email:</dt>
+        <dd class="col-sm-7" th:text="${ad.contactEmailAddress}"></dd>
+        <dt class="col-sm-3">Start date:</dt>
+        <dd class="col-sm-7" th:text="${ad.startDateOfAd}"></dd>
+        <dt class="col-sm-3">Start date:</dt>
+        <dd class="col-sm-7" th:text="${ad.endDateOfAd}"></dd>
+    </dl>
+
+
+    <div class="float-right">
+        <form class="form-inline float right" th:action="@{'/ads/'+${ad.id}}" th:method="delete">
+            <div class="btn-group float-right">
+                <a th:href="@{'/ads/update/'+${ad.id}}" class="float-right btn btn-outline-info" role="button">Update</a>
+                <button class="btn btn-outline-danger" type="submit">Remove</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<footer th:replace="header::footer"></footer>

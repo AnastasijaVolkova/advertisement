@@ -1,0 +1,31 @@
+<head th:replace="header::head"></head>
+<header th:replace="header::header"></header>
+
+<body class="d-flex flex-column h-100">
+<div class="container">
+<h1 class="mt-5">Advertisements</h1>
+<div th:switch="${ads}">
+    <h2 th:case="null">Waiting for new advertisement</h2>
+
+    <div th:case="*">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr scope="row" th:each="ad : ${ads}">
+                <td><a th:href="@{'/ads/' + ${ad.id}}" th:text="${ad.title}"></a></td>
+                <td th:text="${ad.description}"></td>
+                <td th:text="${ad.price}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</body>
+<footer th:replace="header::footer"></footer>

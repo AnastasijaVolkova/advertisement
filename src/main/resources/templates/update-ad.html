@@ -1,0 +1,11 @@
+<head th:replace="header::head"></head>
+<header th:replace="header::header"></header>
+<body class="d-flex flex-column h-100">
+<div class="container">
+<h1 class="mt-5">Update ad</h1>
+    <form method="post" th:action="@{'/ads/update/' + ${advertisementDto.id}}" th:object="${advertisementDto}">
+        <div th:replace="ad-form::ad-form"></div>
+    </form>
+</div>
+</body>
+<footer th:replace="header::footer"></footer>
