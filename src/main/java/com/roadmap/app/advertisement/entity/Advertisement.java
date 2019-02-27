@@ -40,8 +40,6 @@ public class Advertisement {
     private LocalDate startDateOfAd;
     @Column(name = "End_date")
     private LocalDate endDateOfAd;
-    @Column(name = "Archive")
-    private boolean archive;
 
     public Advertisement(String title, String description) {
         this.title = title;
