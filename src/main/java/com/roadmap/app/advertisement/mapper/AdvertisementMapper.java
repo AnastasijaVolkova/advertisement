@@ -31,8 +31,15 @@ public class AdvertisementMapper {
     }
 
     public void update(Advertisement advertisement, AdvertisementDto dto) {
-        if (dto != null && advertisement != null) {
-            BeanUtils.copyProperties(dto, advertisement, Advertisement.class);
+        if (dto != null) {
+            advertisement.setAddress(dto.getAddress());
+            advertisement.setCity(dto.getCity());
+            advertisement.setContactPhoneNumber2(dto.getContactPhoneNumber2());
+            advertisement.setContactPhoneNumber1(dto.getContactPhoneNumber1());
+            advertisement.setDescription(dto.getDescription());
+            advertisement.setTitle(dto.getTitle());
+            advertisement.setPrice(dto.getPrice());
+            advertisement.setContactEmailAddress(dto.getContactEmailAddress());
         }
     }
 }
